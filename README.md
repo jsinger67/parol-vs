@@ -15,3 +15,12 @@ dotnet build --configuration Release
 # Starten von Visual Studio in der experimentellen Instanz
 devenv /rootsuffix Exp /log
 ```
+
+## Language Client (LSP)
+
+Der Language Client ist für den Content-Type `parol` registriert und startet den Server per stdio.
+
+Konfiguration über Umgebungsvariablen:
+
+- `PAROL_LS_PATH` (optional, Standard: `parol-ls`)
+- `PAROL_LS_ARGS` (optional, Standard: `--stdio`)

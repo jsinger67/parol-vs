@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Classification;
+using Microsoft.VisualStudio.LanguageServer.Client;
 using Microsoft.VisualStudio.Utilities;
 using System.ComponentModel.Composition;
 
@@ -12,7 +13,7 @@ namespace parol_vs
         /// </summary>
         [Export]
         [Name("parol")]
-        [BaseDefinition("text")]
+        [BaseDefinition(CodeRemoteContentDefinition.CodeRemoteContentTypeName)]
         internal static ContentTypeDefinition ParolContentTypeDefinition;
 
         /// <summary>
