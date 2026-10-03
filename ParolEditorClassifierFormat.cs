@@ -5,25 +5,88 @@ using System.Windows.Media;
 
 namespace parol_vs
 {
-    /// <summary>
-    /// Defines an editor format for the ParolEditorClassifier type that has a purple background
-    /// and is underlined.
-    /// </summary>
     [Export(typeof(EditorFormatDefinition))]
-    [ClassificationType(ClassificationTypeNames = "ParolEditorClassifier")]
-    [Name("ParolEditorClassifier")]
-    [UserVisible(true)] // This should be visible to the end user
-    [Order(Before = Priority.Default)] // Set the priority to be after the default classifiers
-    internal sealed class ParolEditorClassifierFormat : ClassificationFormatDefinition
+    [ClassificationType(ClassificationTypeNames = ParolEditorClassifierClassificationDefinition.CommentTypeName)]
+    [Name("Parol Comment")]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class ParolCommentFormat : ClassificationFormatDefinition
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ParolEditorClassifierFormat"/> class.
-        /// </summary>
-        public ParolEditorClassifierFormat()
+        public ParolCommentFormat()
         {
-            this.DisplayName = "ParolEditorClassifier"; // Human readable version of the name
-            this.BackgroundColor = Colors.BlueViolet;
-            this.TextDecorations = System.Windows.TextDecorations.Underline;
+            this.DisplayName = "Parol Comment";
+            this.ForegroundColor = Colors.ForestGreen;
+        }
+    }
+
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = ParolEditorClassifierClassificationDefinition.StringTypeName)]
+    [Name("Parol String")]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class ParolStringFormat : ClassificationFormatDefinition
+    {
+        public ParolStringFormat()
+        {
+            this.DisplayName = "Parol String";
+            this.ForegroundColor = Colors.Brown;
+        }
+    }
+
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = ParolEditorClassifierClassificationDefinition.RegexTypeName)]
+    [Name("Parol Regex")]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class ParolRegexFormat : ClassificationFormatDefinition
+    {
+        public ParolRegexFormat()
+        {
+            this.DisplayName = "Parol Regex";
+            this.ForegroundColor = Colors.DarkOrange;
+        }
+    }
+
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = ParolEditorClassifierClassificationDefinition.KeywordTypeName)]
+    [Name("Parol Keyword")]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class ParolKeywordFormat : ClassificationFormatDefinition
+    {
+        public ParolKeywordFormat()
+        {
+            this.DisplayName = "Parol Keyword";
+            this.ForegroundColor = Colors.MediumBlue;
+            this.IsBold = true;
+        }
+    }
+
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = ParolEditorClassifierClassificationDefinition.OperatorTypeName)]
+    [Name("Parol Operator")]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class ParolOperatorFormat : ClassificationFormatDefinition
+    {
+        public ParolOperatorFormat()
+        {
+            this.DisplayName = "Parol Operator";
+            this.ForegroundColor = Colors.DarkCyan;
+        }
+    }
+
+    [Export(typeof(EditorFormatDefinition))]
+    [ClassificationType(ClassificationTypeNames = ParolEditorClassifierClassificationDefinition.IdentifierTypeName)]
+    [Name("Parol Identifier")]
+    [UserVisible(true)]
+    [Order(Before = Priority.Default)]
+    internal sealed class ParolIdentifierFormat : ClassificationFormatDefinition
+    {
+        public ParolIdentifierFormat()
+        {
+            this.DisplayName = "Parol Identifier";
+            this.ForegroundColor = Colors.SlateBlue;
         }
     }
 }
