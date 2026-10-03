@@ -1,32 +1,27 @@
-﻿using Microsoft.VisualStudio.Text;
+using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Classification;
 using Microsoft.VisualStudio.Utilities;
-using System.Collections.Generic;
 using System.ComponentModel.Composition;
 
 namespace parol_vs
 {
-    /// <summary>
-    /// Registers a custom content type for the .parol file extension.
-    /// </summary>
-    [Export(typeof(IContentTypeDefinition))]
-    [Name("parol")]
-    [BaseDefinition("text")]
-    internal class ParolContentTypeDefinition : IContentTypeDefinition
+    internal static class ParolFileAndContentTypeDefinitions
     {
-        public string Name => "parol";
+        /// <summary>
+        /// Registers a custom content type for .par files.
+        /// </summary>
+        [Export]
+        [Name("parol")]
+        [BaseDefinition("text")]
+        internal static ContentTypeDefinition ParolContentTypeDefinition;
 
-        public IEnumerable<string> BaseDefinitions => new[] { "text" };
-    }
-
-    /// <summary>
-    /// Maps the .parol file extension to the custom content type.
-    /// </summary>
-    [Export(typeof(FileExtensionToContentTypeDefinition))]
-    [FileExtension(".par")]
-    [ContentType("parol")]
-    internal static class ParolFileExtensionDefinition
-    {
+        /// <summary>
+        /// Maps the .par extension to the custom content type.
+        /// </summary>
+        [Export]
+        [FileExtension(".par")]
+        [ContentType("parol")]
+        internal static FileExtensionToContentTypeDefinition ParolFileExtensionDefinition;
     }
 
     /// <summary>
