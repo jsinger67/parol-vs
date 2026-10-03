@@ -34,7 +34,7 @@ namespace parol_vs
     /// </summary>
     [Export(typeof(IClassifierProvider))]
     [ContentType("parol")]
-    internal class EditorClassifier1Provider : IClassifierProvider
+    internal class ParolEditorClassifierProvider : IClassifierProvider
     {
         // Disable "Field is never assigned to..." compiler's warning. Justification: the field is assigned by MEF.
 #pragma warning disable 649
@@ -57,7 +57,7 @@ namespace parol_vs
         /// <returns>A classifier for the text buffer, or null if the provider cannot do so in its current state.</returns>
         public IClassifier GetClassifier(ITextBuffer buffer)
         {
-            return buffer.Properties.GetOrCreateSingletonProperty<EditorClassifier1>(creator: () => new EditorClassifier1(this.classificationRegistry));
+            return buffer.Properties.GetOrCreateSingletonProperty<ParolEditorClassifier>(creator: () => new ParolEditorClassifier(this.classificationRegistry));
         }
 
         #endregion
