@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.Text;
 using Microsoft.VisualStudio.Text.Classification;
+using Microsoft.VisualStudio.Language.StandardClassification;
 using System;
 using System.Collections.Generic;
 
@@ -49,12 +50,12 @@ namespace parol_vs
         internal ParolEditorClassifier(IClassificationTypeRegistryService registry, ITextBuffer textBuffer)
         {
             this.textBuffer = textBuffer;
-            this.commentType = registry.GetClassificationType(ParolEditorClassifierClassificationDefinition.CommentTypeName);
-            this.stringType = registry.GetClassificationType(ParolEditorClassifierClassificationDefinition.StringTypeName);
-            this.regexType = registry.GetClassificationType(ParolEditorClassifierClassificationDefinition.RegexTypeName);
-            this.keywordType = registry.GetClassificationType(ParolEditorClassifierClassificationDefinition.KeywordTypeName);
-            this.operatorType = registry.GetClassificationType(ParolEditorClassifierClassificationDefinition.OperatorTypeName);
-            this.identifierType = registry.GetClassificationType(ParolEditorClassifierClassificationDefinition.IdentifierTypeName);
+            this.commentType = registry.GetClassificationType(PredefinedClassificationTypeNames.Comment);
+            this.stringType = registry.GetClassificationType(PredefinedClassificationTypeNames.String);
+            this.regexType = this.stringType;
+            this.keywordType = registry.GetClassificationType(PredefinedClassificationTypeNames.Keyword);
+            this.operatorType = registry.GetClassificationType(PredefinedClassificationTypeNames.Operator);
+            this.identifierType = registry.GetClassificationType(PredefinedClassificationTypeNames.Identifier);
             this.textBuffer.Changed += this.OnBufferChanged;
         }
 
