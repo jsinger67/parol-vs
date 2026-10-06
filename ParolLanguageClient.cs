@@ -59,6 +59,24 @@ namespace parol_vs
                 throw new InvalidOperationException("Failed to start parol language server process.");
             }
 
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    using var reader = this.languageServerProcess!.StandardError;
+                    var logPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), $"parol-ls-stderr_{this.languageServerProcess.Id}.log");
+                    using var writer = new System.IO.StreamWriter(logPath, append: true);
+                    string? line;
+                    while ((line = await reader.ReadLineAsync()) != null && !token.IsCancellationRequested)
+                    {
+                        System.Diagnostics.Debug.WriteLine($"parol-ls stderr: {line}");
+                        await writer.WriteLineAsync(line);
+                        await writer.FlushAsync();
+                    }
+                }
+                catch { }
+            }, token);
+
             return new Connection(this.languageServerProcess.StandardOutput.BaseStream, this.languageServerProcess.StandardInput.BaseStream);
         }
 
