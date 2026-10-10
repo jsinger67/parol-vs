@@ -1,4 +1,15 @@
-# parol-vs
+# parol-vs - Parol Language Support for Visual Studio 2022 / 2026
+
+This is a Visual Studio extension to support [`parol`](https://github.com/jsinger67/parol.git)'s syntax
+of grammar description files (.par files).
+
+## Features
+
+The extension supports syntax highlighting, document outline, goto definition, hover, rename.
+It relies on the [parol language server](https://github.com/jsinger67/parol/tree/main/crates/parol-ls) for the best support. See below for instructions.
+
+## Installation
+
 
 ## Workflow to develop and test the parol-vs project
 
@@ -18,9 +29,12 @@ devenv /rootsuffix Exp /log
 
 ## Language Client (LSP)
 
-Der Language Client ist für den Content-Type `parol` registriert und startet den Server per stdio.
+The extension uses the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) to communicate with the parol language server.
+It is registered for the content type `parol` and starts the server via stdio.
 
-Konfiguration über Umgebungsvariablen:
+Use the following configuration in Visual Studio to specify the path to the parol language server and its arguments:
 
-- `PAROL_LS_PATH` (optional, Standard: `parol-ls`)
-- `PAROL_LS_ARGS` (optional, Standard: `--stdio`)
+Configuration via environment variables:
+
+- `PAROL_LS_PATH` (optional, default: `parol-ls`)
+- `PAROL_LS_ARGS` (optional, default: `--stdio`)

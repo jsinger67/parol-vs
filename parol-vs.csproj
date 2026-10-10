@@ -9,6 +9,32 @@
     <VSSDKBuildToolsAutoSetup>true</VSSDKBuildToolsAutoSetup>
     <GeneratePkgDefFile>true</GeneratePkgDefFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CHANGELOG.md" />
+    <None Remove="LICENSE-APACHE" />
+    <None Remove="LICENSE-MIT" />
+    <None Remove="LICENSE.txt" />
+    <None Remove="README.md" />
+    <None Remove="Resources\parol.png" />
+    <None Remove="Resources\ParolVS300x300.png" />
+    <None Remove="Resources\ParolVS512x512.png" />
+    <None Remove="Resources\Preview.png" />
+    <None Remove="Resources\Preview200x200.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="CHANGELOG.md" />
+    <Content Include="LICENSE-APACHE" />
+    <Content Include="LICENSE-MIT" />
+    <Content Include="LICENSE.txt" />
+    <Content Include="README.md" />
+    <Content Include="Resources\parol.png" />
+    <Content Include="Resources\ParolVS300x300.png" />
+    <Content Include="Resources\ParolVS512x512.png" />
+    <Content Include="Resources\Preview.png" />
+    <Content Include="Resources\Preview200x200.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectCapability Include="CreateVsixContainer" />
   </ItemGroup>
