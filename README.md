@@ -1,4 +1,11 @@
-# parol-vs - Parol Language Support for Visual Studio 2022 / 2026
+# Parol Language Support for Visual Studio 2022/2026
+
+<!-- markdownlint-disable Inline HTML -->
+<br>
+<img src="https://github.com/jsinger67/parol-vs/raw/main/Resources/ParolVS300x300.png?raw=true" alt="Logo" height=300 with=300>
+<br><br><br>
+<!-- markdownlint-enable Inline HTML -->
+
 
 This is a Visual Studio extension to support [`parol`](https://github.com/jsinger67/parol.git)'s syntax
 of grammar description files (.par files).
@@ -38,3 +45,15 @@ Configuration via environment variables:
 
 - `PAROL_LS_PATH` (optional, default: `parol-ls`)
 - `PAROL_LS_ARGS` (optional, default: `--stdio`)
+
+## Changes regarding the Language Server can be viewed here:
+
+- [CHANGELOG parol-ls](https://github.com/jsinger67/parol/blob/main/crates/parol-ls/CHANGELOG.md)
+
+<!-- markdownlint-disable Inline HTML -->
+<br>
+<img src="https://github.com/jsinger67/parol-vs/raw/main/Resources/Preview.png?raw=true" alt="Example">
+<br><br><br>
+<!-- markdownlint-enable Inline HTML -->
+
+Please check regularly for updates.
