@@ -39,6 +39,10 @@ namespace parol_vs
         {
             await Task.Yield();
 
+            // Use the following lines to run the language server in development mode with lsp-devtools.
+            // string fileName = Environment.GetEnvironmentVariable(LanguageServerPathVariable) ?? "lsp-devtools";
+            // string arguments = Environment.GetEnvironmentVariable(LanguageServerArgsVariable) ?? "agent -- parol-ls --stdio";
+
             string fileName = Environment.GetEnvironmentVariable(LanguageServerPathVariable) ?? "parol-ls";
             string arguments = Environment.GetEnvironmentVariable(LanguageServerArgsVariable) ?? "--stdio";
 
