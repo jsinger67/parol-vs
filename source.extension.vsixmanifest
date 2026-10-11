@@ -3,14 +3,25 @@
   <Metadata>
     <Identity Id="parol_vs.88535f74-269a-4d60-b4ec-223df8f14c0a" Version="1.0" Language="en-US" Publisher="Jörg Singer" />
     <DisplayName>parol-vs</DisplayName>
-    <Description xml:space="preserve">Parol Language Support for Visual Studio 2022 / 2026</Description>
-	  <License>LICENSE.txt</License>
+    <Description>Parol Language Support for Visual Studio 2022/2026</Description>
+    <MoreInfo>https://github.com/jsinger67/parol-vs</MoreInfo>
+    <License>LICENSE.txt</License>
+    <GettingStartedGuide>https://github.com/jsinger67/parol-vs/blob/main/README.md</GettingStartedGuide>
+    <ReleaseNotes>https://github.com/jsinger67/parol-vs/blob/main/CHANGELOG.md</ReleaseNotes>
     <Icon>Resources\ParolVS512x512.png</Icon>
+    <PreviewImage>Resources\ParolVS512x512.png</PreviewImage>
     <Tags>Parol;Parser generator;Language tool</Tags>
+    <Preview>true</Preview>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.14, )">
       <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.14,)">
+      <ProductArchitecture>amd64</ProductArchitecture>
+    </InstallationTarget>
+    <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.14,)">
+      <ProductArchitecture>arm64</ProductArchitecture>
     </InstallationTarget>
   </Installation>
   <Dependencies>

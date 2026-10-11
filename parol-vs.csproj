@@ -1,26 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
-    <Nullable>enable</Nullable>
-    <LangVersion>14</LangVersion>
+	<TargetFramework>net472</TargetFramework>
+	<Nullable>enable</Nullable>
+	<LangVersion>14</LangVersion>
 
-    <!-- VSIX settings -->
-    <VSSDKBuildToolsAutoSetup>true</VSSDKBuildToolsAutoSetup>
-    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+	<!-- VSIX settings -->
+	<VSSDKBuildToolsAutoSetup>true</VSSDKBuildToolsAutoSetup>
+	<GeneratePkgDefFile>true</GeneratePkgDefFile>
+	<CreateVsixContainer>true</CreateVsixContainer>
+	<GenerateVsixManifest>true</GenerateVsixManifest>
+	<IncludeAssemblyInVsixContainer>true</IncludeAssemblyInVsixContainer>
+	<CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+	<CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+	<DeployExtension>false</DeployExtension>
+	<VsixPackageId>parol-vs.88535f74-269a-4d60-b4ec-223df8f14c0a</VsixPackageId>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="CHANGELOG.md" />
-    <None Remove="LICENSE-APACHE" />
-    <None Remove="LICENSE-MIT" />
-    <None Remove="LICENSE.txt" />
-    <None Remove="README.md" />
-    <None Remove="Resources\parol.png" />
-    <None Remove="Resources\ParolVS300x300.png" />
-    <None Remove="Resources\ParolVS512x512.png" />
-    <None Remove="Resources\Preview.png" />
-    <None Remove="Resources\Preview200x200.png" />
+    <VSIXSourceItem Include="source.extension.vsixmanifest" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,10 +33,16 @@
     <Content Include="Resources\Preview.png" />
     <Content Include="Resources\Preview200x200.png" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include=".github\workflows\build.yml" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectCapability Include="CreateVsixContainer" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.LanguageServer.Client" Version="17.14.60" />
     <PackageReference Include="Microsoft.VisualStudio.SDK" Version="17.14.40265" ExcludeAssets="runtime" />
     <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="18.9.820" />
   </ItemGroup>
