@@ -29,5 +29,5 @@ jobs:
         with:
           name: parol-vs-vsix
           path: |
-            bin/Release/*.vsix
+            bin/Release/net472/*.vsix
           if-no-files-found: warn
